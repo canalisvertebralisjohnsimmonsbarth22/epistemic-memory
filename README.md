@@ -6,6 +6,8 @@ Most AI memory systems accumulate observations about you, treat each one as equa
 
 Epistemic Memory fixes this by treating every stored belief as a hypothesis — with explicit confidence, decay, and contradiction tracking.
 
+What it's actually modeling: **psychographic data** — personality traits, cognitive style, motivations, working patterns, contradictions. Every AI with persistent memory already builds this kind of model implicitly. This framework makes it explicit, transparent, and user-controlled. You can see every belief, challenge any of them, and the system periodically asks "am I still right about this?" The difference between this and adtech profiling is consent: the subject holds the keys.
+
 ## What This Is
 
 - **A protocol**, not a library. No code, no dependencies, no build step.

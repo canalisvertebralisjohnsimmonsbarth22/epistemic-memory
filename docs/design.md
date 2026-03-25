@@ -15,6 +15,22 @@ The failure modes are specific:
 
 The founding insight: "leave the door ajar for surprises — humans are messy, with contradictions wrapped within contradictions." The framework is designed to hold that messiness without collapsing it into false clarity.
 
+## What This Actually Models
+
+This framework builds a psychographic profile of the user — not just preferences ("uses dark mode") but personality traits, cognitive style, motivations, fears, working patterns, self-perception gaps, and behavioral contradictions. The example profile includes entries like "Imposter Pattern" and "Legacy Thinking." That's personality modeling, and it's worth naming plainly.
+
+Every AI system with persistent memory already does this implicitly. When Claude remembers "you're a deep thinker" or ChatGPT notes "you prefer concise responses," they're building a psychographic model — just a bad one, with no confidence tracking, no decay, no contradiction tolerance, and no way for you to see or challenge it.
+
+This framework makes the modeling explicit, transparent, and user-controlled:
+
+- **Every belief is visible.** The user can read, challenge, or delete anything in the profile.
+- **Confidence is earned, not assumed.** Interpretive beliefs about personality are capped at 0.90 — the system can never be fully certain about someone's inner state.
+- **The tensions log exists specifically so the model doesn't become a one-way mirror.** Contradictions stay on record. The user is invited to disagree.
+- **The `/mirror` skill surfaces the model back to the user** as a portrait they can correct — not a hidden dossier they never see.
+- **The periodic gut-check asks the user directly** whether the highest and lowest confidence beliefs still ring true.
+
+The difference between this and surveillance-style psychographic profiling is consent and transparency. Adtech builds psychographic profiles to predict and manipulate behavior without the subject's knowledge. This framework builds one to collaborate more effectively, and the subject holds the keys.
+
 ## The Core Design
 
 Ten components, each solving a specific failure mode.
