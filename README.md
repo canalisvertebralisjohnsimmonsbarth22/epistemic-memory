@@ -1,12 +1,16 @@
 # Epistemic Memory
 
-**A protocol for AI assistants to hold beliefs as weighted hypotheses — not settled facts.**
+**A protocol for AI memory that models who you are — not just what you use.**
 
-Most AI memory systems accumulate observations about you, treat each one as equally true, and never forget or doubt anything. "You're a deep thinker" carries the same weight as "you use dark mode." A preference stated six months ago is treated as current gospel. Contradictions get smoothed over. The result is a flattering caricature that diverges from the actual person over time.
+An AI that remembers your name and your language preferences is a tool. One that understands how you think — your cognitive style, what motivates you, where you contradict yourself — is a thinking partner. It pushes back when you need it, frames things the way you'll actually hear them, and notices when something's off before you do. The gap between those two experiences is enormous, and it comes down to what the memory system is willing to model.
 
-Epistemic Memory fixes this by treating every stored belief as a hypothesis — with explicit confidence, decay, and contradiction tracking.
+## Why This Exists
 
-What it's actually modeling: **psychographic data** — personality traits, cognitive style, motivations, working patterns, contradictions. Every AI with persistent memory already builds this kind of model implicitly. This framework makes it explicit, transparent, and user-controlled. You can see every belief, challenge any of them, and the system periodically asks "am I still right about this?" The difference between this and adtech profiling is consent: the subject holds the keys.
+Every AI with persistent memory is already building a psychographic profile of you — personality traits, cognitive style, motivations, working patterns. It's just doing it badly. No confidence tracking, no decay, no contradiction tolerance, and no way for you to see or challenge any of it. "You're a deep thinker" carries the same weight as "you use dark mode." A preference from six months ago is treated as current gospel. Contradictions get smoothed over into a flattering caricature that drifts from who you actually are.
+
+The deeper your AI understands how you think, the more useful the collaboration becomes. But that deeper understanding needs to be honest — held as hypotheses with varying confidence, not settled facts. It needs to weaken when evidence goes stale. And it needs to be yours to see, challenge, and correct.
+
+Epistemic Memory is a protocol for doing this right: treating every stored belief as a weighted hypothesis with explicit confidence, decay, and contradiction tracking. The difference between this and adtech-style profiling is consent — every belief is visible, and the subject holds the keys.
 
 ## What This Is
 

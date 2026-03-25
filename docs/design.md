@@ -1,6 +1,14 @@
 # Epistemic Memory Framework — Design Document
 
-A design for AI memory that knows what it doesn't know. This framework treats every belief about the user as a hypothesis rather than a fact — with explicit confidence, decay, and contradiction tracking.
+A design for AI memory that models who you are — not just what you use.
+
+## Why This Matters
+
+An AI assistant that knows your name, your language, and your project structure is a tool. One that understands how you think — your cognitive style, what motivates you, how you make decisions, where you contradict yourself — is a thinking partner. The difference shows up in every interaction: it pushes back when you need it, frames explanations the way you'll actually absorb them, and catches patterns you can't see from inside your own head.
+
+This isn't aspirational — it's what happens when the memory system goes beyond flat facts. A developer who "prefers concise output" and a developer who "thinks out loud, needs to externalize before deciding, but wants the final artifact tight" will get dramatically different (and better) help from an AI that captures the second version. The deeper the model, the less you repeat yourself, the fewer false starts, and the more the AI can serve as a genuine collaborator rather than an autocomplete engine.
+
+But deeper modeling demands better epistemology. A shallow fact store can afford to be sloppy — getting someone's editor preference wrong is low-stakes. A system that models personality traits, cognitive patterns, and motivations can't afford the same sloppiness. Overconfident beliefs about who someone is are worse than no beliefs at all. This framework exists because the value of deep user modeling is high, and the cost of doing it badly is also high.
 
 ## The Problem
 
