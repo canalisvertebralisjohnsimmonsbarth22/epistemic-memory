@@ -58,10 +58,21 @@ Full rationale, adversarial review findings, and limitations: [docs/design.md](d
 ## Quick Start
 
 1. Copy `memory/` into your Claude Code project memory directory
-2. Copy `.claude/skills/mirror/` into your project's `.claude/skills/`
-3. Add the snippet from [`CLAUDE.md.example`](CLAUDE.md.example) to your project's `CLAUDE.md`
-4. Start a conversation — beliefs accumulate naturally as you work together
-5. Run `/mirror` to see what the AI thinks it knows about you
+2. Copy `.claude/skills/` into your project's `.claude/skills/` (includes Mirror and Observe)
+3. Copy `.claude/hooks/session-counter.sh` into your project's `.claude/hooks/`
+4. Register the hook in your `.claude/settings.json`:
+   ```json
+   {
+     "hooks": {
+       "SessionStart": [
+         { "type": "command", "command": "bash .claude/hooks/session-counter.sh" }
+       ]
+     }
+   }
+   ```
+5. Add the snippet from [`CLAUDE.md.example`](CLAUDE.md.example) to your project's `CLAUDE.md`
+6. Start a conversation — beliefs accumulate naturally as you work together
+7. Run `/mirror` to see what the AI thinks it knows about you
 
 ## The Mirror Skill
 
@@ -76,7 +87,7 @@ Four modes for inspecting and refining the model:
 
 ## The Observe Skill
 
-Silent consistency (component 7) needs enforcement — the system can't rely on the LLM remembering to notice behavioral patterns. The Observe skill solves this by running automatically at conversation end alongside `/harvest`. It watches for:
+Silent consistency (component 7) needs enforcement — the system can't rely on the LLM remembering to notice behavioral patterns. The Observe skill runs automatically at conversation end alongside your harvest process. It watches for:
 
 - **Judgment calls** where reasonable people would disagree
 - **Pushback** on suggestions, revealing priorities or values
@@ -84,6 +95,14 @@ Silent consistency (component 7) needs enforcement — the system can't rely on 
 - **Process signals** — what the user lingers on, skips, or returns to
 
 Each observation is logged as dated evidence with a strength rating (single, confirming, complicating, contradicting). Observations accumulate as raw evidence; they get synthesized into the portrait during `/mirror` or periodic review. The separation is intentional — observations are cheap and frequent, portrait updates are expensive and should require pattern confirmation across multiple sessions.
+
+Full specification: [.claude/skills/observe/SKILL.md](.claude/skills/observe/SKILL.md)
+
+## Session Counter Hook
+
+The session counter (component 8) gives periodic reviews a mechanical trigger. A bash hook increments a counter at every session start and alerts you when a review is due.
+
+Setup requires registering the hook in `.claude/settings.json` — see Quick Start above. The counter file lives at `memory/user/session-counter.json` and tracks session count, last session date, and the next review threshold.
 
 ## Why Not Just Use MEMORY.md?
 

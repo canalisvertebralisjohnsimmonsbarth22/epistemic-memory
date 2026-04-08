@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# Personal data (populated at runtime)
+# Uncomment these if you fork and want to keep your profile private:
+# memory/user/identity.md
+# memory/user/drives.md
+# memory/user/creative-life.md
+# memory/user/observations.md

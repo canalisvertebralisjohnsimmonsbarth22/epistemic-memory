@@ -10,6 +10,7 @@ Follow the protocol in `memory/user/epistemic-protocol.md` when updating beliefs
 - Only update beliefs actively relevant to the current session
 - Confidence must be earned through evidence, not assigned by how insightful a belief sounds
 - When observed behavior contradicts a belief, log a tension — don't silently resolve it
-- Increment session counter at conversation start
+- Session counter is auto-incremented by the `session-counter.sh` hook at session start
 - At periodic review thresholds, run `/mirror audit` or `/mirror gut-check`
+- At conversation end, run the Observe skill to collect behavioral evidence (see `.claude/skills/observe/`)
 ```
